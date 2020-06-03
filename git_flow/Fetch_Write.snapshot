@@ -1,0 +1,420 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+            "id" : "30b2d406-4246-3079-88da-d7b3ea563795",
+            "name" : "FetchFile",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+          "identifier" : "e1ae10ea-0d20-30eb-b0ac-2ff09d68279c",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+            "id" : "8290ac46-1501-30c8-abff-9287808b010b",
+            "name" : "ListFile",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+            "id" : "812dd0ed-158b-35c8-884a-ff8b826071b7",
+            "name" : "PutFile",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+          "identifier" : "3fb8faf4-f841-38d7-8391-badeb66aaf2c",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+            "id" : "30b2d406-4246-3079-88da-d7b3ea563795",
+            "name" : "FetchFile",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "CGNAT-Test",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 848.0,
+          "y" : 24.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+          "identifier" : "8290ac46-1501-30c8-abff-9287808b010b",
+          "name" : "ListFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 509.08688336279096,
+            "y" : 264.78370793830106
+          },
+          "properties" : {
+            "Minimum File Age" : "0 sec",
+            "et-initial-listing-target" : "all",
+            "max-listing-time" : "3 mins",
+            "et-time-window" : "3 hours",
+            "et-node-identifier" : "${hostname()}",
+            "Recurse Subdirectories" : "true",
+            "File Filter" : "[^\\.].*",
+            "Include File Attributes" : "true",
+            "Input Directory Location" : "Local",
+            "listing-strategy" : "timestamps",
+            "Input Directory" : "/home/osboxes/vinod",
+            "target-system-timestamp-precision" : "auto-detect",
+            "track-performance" : "false",
+            "max-performance-metrics" : "100000",
+            "Minimum File Size" : "0 B",
+            "Ignore Hidden Files" : "true",
+            "max-operation-time" : "10 secs"
+          },
+          "propertyDescriptors" : {
+            "Minimum File Age" : {
+              "displayName" : "Minimum File Age",
+              "identifiesControllerService" : false,
+              "name" : "Minimum File Age",
+              "sensitive" : false
+            },
+            "et-initial-listing-target" : {
+              "displayName" : "Entity Tracking Initial Listing Target",
+              "identifiesControllerService" : false,
+              "name" : "et-initial-listing-target",
+              "sensitive" : false
+            },
+            "Maximum File Age" : {
+              "displayName" : "Maximum File Age",
+              "identifiesControllerService" : false,
+              "name" : "Maximum File Age",
+              "sensitive" : false
+            },
+            "max-listing-time" : {
+              "displayName" : "Max Directory Listing Time",
+              "identifiesControllerService" : false,
+              "name" : "max-listing-time",
+              "sensitive" : false
+            },
+            "Maximum File Size" : {
+              "displayName" : "Maximum File Size",
+              "identifiesControllerService" : false,
+              "name" : "Maximum File Size",
+              "sensitive" : false
+            },
+            "et-time-window" : {
+              "displayName" : "Entity Tracking Time Window",
+              "identifiesControllerService" : false,
+              "name" : "et-time-window",
+              "sensitive" : false
+            },
+            "et-node-identifier" : {
+              "displayName" : "Entity Tracking Node Identifier",
+              "identifiesControllerService" : false,
+              "name" : "et-node-identifier",
+              "sensitive" : false
+            },
+            "Recurse Subdirectories" : {
+              "displayName" : "Recurse Subdirectories",
+              "identifiesControllerService" : false,
+              "name" : "Recurse Subdirectories",
+              "sensitive" : false
+            },
+            "File Filter" : {
+              "displayName" : "File Filter",
+              "identifiesControllerService" : false,
+              "name" : "File Filter",
+              "sensitive" : false
+            },
+            "Path Filter" : {
+              "displayName" : "Path Filter",
+              "identifiesControllerService" : false,
+              "name" : "Path Filter",
+              "sensitive" : false
+            },
+            "Include File Attributes" : {
+              "displayName" : "Include File Attributes",
+              "identifiesControllerService" : false,
+              "name" : "Include File Attributes",
+              "sensitive" : false
+            },
+            "Input Directory Location" : {
+              "displayName" : "Input Directory Location",
+              "identifiesControllerService" : false,
+              "name" : "Input Directory Location",
+              "sensitive" : false
+            },
+            "listing-strategy" : {
+              "displayName" : "Listing Strategy",
+              "identifiesControllerService" : false,
+              "name" : "listing-strategy",
+              "sensitive" : false
+            },
+            "Input Directory" : {
+              "displayName" : "Input Directory",
+              "identifiesControllerService" : false,
+              "name" : "Input Directory",
+              "sensitive" : false
+            },
+            "target-system-timestamp-precision" : {
+              "displayName" : "Target System Timestamp Precision",
+              "identifiesControllerService" : false,
+              "name" : "target-system-timestamp-precision",
+              "sensitive" : false
+            },
+            "track-performance" : {
+              "displayName" : "Track Performance",
+              "identifiesControllerService" : false,
+              "name" : "track-performance",
+              "sensitive" : false
+            },
+            "max-performance-metrics" : {
+              "displayName" : "Maximum Number of Files to Track",
+              "identifiesControllerService" : false,
+              "name" : "max-performance-metrics",
+              "sensitive" : false
+            },
+            "Minimum File Size" : {
+              "displayName" : "Minimum File Size",
+              "identifiesControllerService" : false,
+              "name" : "Minimum File Size",
+              "sensitive" : false
+            },
+            "Ignore Hidden Files" : {
+              "displayName" : "Ignore Hidden Files",
+              "identifiesControllerService" : false,
+              "name" : "Ignore Hidden Files",
+              "sensitive" : false
+            },
+            "et-state-cache" : {
+              "displayName" : "Entity Tracking State Cache",
+              "identifiesControllerService" : true,
+              "name" : "et-state-cache",
+              "sensitive" : false
+            },
+            "max-operation-time" : {
+              "displayName" : "Max Disk Operation Time",
+              "identifiesControllerService" : false,
+              "name" : "max-operation-time",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "30 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.ListFile",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure", "permission.denied", "not.found" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+          "identifier" : "30b2d406-4246-3079-88da-d7b3ea563795",
+          "name" : "FetchFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 509.08688336279096,
+            "y" : 464.78370793830106
+          },
+          "properties" : {
+            "Move Conflict Strategy" : "Rename",
+            "Log level when file not found" : "ERROR",
+            "Log level when permission denied" : "ERROR",
+            "File to Fetch" : "${absolute.path}/${filename}",
+            "Completion Strategy" : "None"
+          },
+          "propertyDescriptors" : {
+            "Move Conflict Strategy" : {
+              "displayName" : "Move Conflict Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Move Conflict Strategy",
+              "sensitive" : false
+            },
+            "Log level when file not found" : {
+              "displayName" : "Log level when file not found",
+              "identifiesControllerService" : false,
+              "name" : "Log level when file not found",
+              "sensitive" : false
+            },
+            "Move Destination Directory" : {
+              "displayName" : "Move Destination Directory",
+              "identifiesControllerService" : false,
+              "name" : "Move Destination Directory",
+              "sensitive" : false
+            },
+            "Log level when permission denied" : {
+              "displayName" : "Log level when permission denied",
+              "identifiesControllerService" : false,
+              "name" : "Log level when permission denied",
+              "sensitive" : false
+            },
+            "File to Fetch" : {
+              "displayName" : "File to Fetch",
+              "identifiesControllerService" : false,
+              "name" : "File to Fetch",
+              "sensitive" : false
+            },
+            "Completion Strategy" : {
+              "displayName" : "Completion Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Completion Strategy",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.FetchFile",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "success", "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.4"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
+          "identifier" : "812dd0ed-158b-35c8-884a-ff8b826071b7",
+          "name" : "PutFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 525.086883362791,
+            "y" : 664.7837079383011
+          },
+          "properties" : {
+            "Create Missing Directories" : "true",
+            "Directory" : "/home/osboxes/tmp",
+            "Conflict Resolution Strategy" : "fail"
+          },
+          "propertyDescriptors" : {
+            "Group" : {
+              "displayName" : "Group",
+              "identifiesControllerService" : false,
+              "name" : "Group",
+              "sensitive" : false
+            },
+            "Owner" : {
+              "displayName" : "Owner",
+              "identifiesControllerService" : false,
+              "name" : "Owner",
+              "sensitive" : false
+            },
+            "Create Missing Directories" : {
+              "displayName" : "Create Missing Directories",
+              "identifiesControllerService" : false,
+              "name" : "Create Missing Directories",
+              "sensitive" : false
+            },
+            "Permissions" : {
+              "displayName" : "Permissions",
+              "identifiesControllerService" : false,
+              "name" : "Permissions",
+              "sensitive" : false
+            },
+            "Maximum File Count" : {
+              "displayName" : "Maximum File Count",
+              "identifiesControllerService" : false,
+              "name" : "Maximum File Count",
+              "sensitive" : false
+            },
+            "Last Modified Time" : {
+              "displayName" : "Last Modified Time",
+              "identifiesControllerService" : false,
+              "name" : "Last Modified Time",
+              "sensitive" : false
+            },
+            "Directory" : {
+              "displayName" : "Directory",
+              "identifiesControllerService" : false,
+              "name" : "Directory",
+              "sensitive" : false
+            },
+            "Conflict Resolution Strategy" : {
+              "displayName" : "Conflict Resolution Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Conflict Resolution Strategy",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.PutFile",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
