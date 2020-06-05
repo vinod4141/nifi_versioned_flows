@@ -74,7 +74,7 @@
         "identifier" : "c33fa257-24f8-3ca2-a5ec-fa299d640709",
         "inputPorts" : [ ],
         "labels" : [ ],
-        "name" : "CGNAT-Test",
+        "name" : "DF-Demo",
         "outputPorts" : [ ],
         "position" : {
           "x" : 848.0,
